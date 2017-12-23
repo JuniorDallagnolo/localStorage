@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans|Neuton");
+/* line 3, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* line 13, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+html {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Fira Sans', Geneva, Verdana, Helvetica, Arial, sans-serif;
+}
+
+/* line 19, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+header {
+  background-color: #066;
+  color: #BBB;
+}
+
+/* line 24, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+header h1 {
+  font-size: 2rem;
+  line-height: 5rem;
+  height: 5rem;
+  text-align: center;
+  text-shadow: 0 3px 0px #000, 0 14px 10px rgba(0, 0, 0, 0.15), 0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in;
+}
+
+/* line 35, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+footer {
+  font-size: 1.1rem;
+  text-align: center;
+  text-shadow: 1px 1px 1px #c2d3d6, -1px -1px 1px #cccccc;
+}
+
+/* line 41, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contacts {
+  width: 70%;
+  border: 1px solid #aaa;
+  list-style: none;
+  margin: 1rem auto 5rem auto;
+  border-radius: 3px;
+}
+
+/* line 49, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contact {
+  height: 7rem;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+/* line 54, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contact:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+/* line 59, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contact .delete {
+  float: right;
+  width: 10%;
+  height: 7rem;
+  background-color: #e4e4e4;
+  text-align: center;
+  line-height: 7rem;
+  font-size: 2rem;
+  display: block;
+  background-image: url(../img/circle-x.svg);
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: center center;
+  border-bottom: 1px solid #999;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* line 77, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contact .delete:hover {
+  background-color: #d4d4d4;
+}
+
+/* line 81, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contact h3 {
+  color: #333;
+  padding-top: 1.0rem;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* line 89, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contact:hover h3 {
+  color: #066;
+}
+
+/* line 93, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contact p {
+  color: #666;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  padding: 0 2rem;
+  vertical-align: top;
+}
+
+/* line 101, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.fab {
+  background: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-color: #066;
+  background-position: center center;
+  background-size: 50% 50%;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  box-shadow: 2px 2px 8px black;
+}
+
+/* line 116, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.fab:hover {
+  background-color: #099;
+}
+
+/* line 120, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 100;
+}
+
+/* line 128, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.contactform {
+  position: fixed;
+  width: 80vw;
+  height: 80vh;
+  top: 10vh;
+  left: 10vw;
+  background-color: #f4f4f4;
+  box-shadow: 2px 2px 12px black;
+}
+
+/* line 138, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear .2s, opacity .2s ease-out;
+}
+
+/* line 151, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.modal {
+  color: #aaa;
+  overflow: auto;
+  padding: 3rem;
+  position: fixed;
+  width: 90vw;
+  height: 340px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transform: scale(0.9) translate3d(0, -50px, 0);
+  transition: visibility 0s linear .2s, opacity .2s ease-out, transform .2s ease-out;
+}
+
+/* line 174, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.overlay[data-state='open'] {
+  opacity: 1;
+  transition-delay: 0s;
+  visibility: visible;
+}
+
+/* line 180, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.overlay[data-state='open'] .modal {
+  opacity: 1;
+  transform: scale(1) translate3d(0, 0, 0);
+  transition-delay: 0s;
+  visibility: visible;
+}
+
+/* line 187, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+#close {
+  background-image: url(../img/circle-x.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  text-indent: -9999px;
+  transition: all .2s ease-out;
+  width: 2rem;
+  height: 30px;
+  opacity: .6;
+}
+
+/* line 204, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+#close:hover {
+  opacity: 1;
+}
+
+/* line 208, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+input {
+  color: #555;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: #fbfbfb;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 3px solid #656565;
+}
+
+/* line 221, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+input:focus {
+  background: #fff;
+  box-shadow: 0;
+  border: 3px solid #099;
+  outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+/* line 229, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.modal button {
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  padding: 13px;
+  width: 100%;
+  background-color: #066;
+  color: #fff;
+  border: 0;
+}
+
+/* line 241, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+.modal button:hover {
+  cursor: pointer;
+  background-color: #099;
+}
+
+/* line 246, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+#name {
+  background-image: url(../img/fullname.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+/* line 253, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+#email {
+  background-image: url(../img/email.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+/* line 260, /Applications/MAMP/htdocs/localStorage/sass/main.scss */
+#phone {
+  background-image: url(../img/phone.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 600px) {
+  /* line 2, /Applications/MAMP/htdocs/localStorage/sass/_queries.scss */
+  header h1 {
+    font-size: 3rem;
+  }
+  /* line 6, /Applications/MAMP/htdocs/localStorage/sass/_queries.scss */
+  .modal {
+    width: 80vw;
+  }
+  /* line 10, /Applications/MAMP/htdocs/localStorage/sass/_queries.scss */
+  .contact h3 {
+    line-height: 3.0rem;
+    font-size: 1.9rem;
+    padding: 0 2rem;
+  }
+  /* line 16, /Applications/MAMP/htdocs/localStorage/sass/_queries.scss */
+  .contact p {
+    font-size: 1.2rem;
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  /* line 24, /Applications/MAMP/htdocs/localStorage/sass/_queries.scss */
+  .modal {
+    width: 60vw;
+  }
+  /* line 28, /Applications/MAMP/htdocs/localStorage/sass/_queries.scss */
+  .contact h3 {
+    font-size: 2.0rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* line 34, /Applications/MAMP/htdocs/localStorage/sass/_queries.scss */
+  .modal {
+    width: 40vw;
+  }
+}
+
+/*# sourceMappingURL=../css/main.map */
